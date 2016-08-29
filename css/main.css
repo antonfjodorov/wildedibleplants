@@ -1,0 +1,26 @@
+section.about{
+	background-color: antiquewhite;
+}
+section.cover{
+	background-image: url('../img/cover-fence.jpg');
+	background-size: cover;
+	background-position-y: 200px;
+}
+.plant img{
+	max-width: 300px;
+}
+.cover .plant{
+	text-align: center;
+	color: #fcfcfc;
+}
+
+#plants{
+	background-color: #eee;
+}
+#plants .plant{
+
+}
+
+.template{
+	display: none;
+}

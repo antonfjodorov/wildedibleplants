@@ -1,0 +1,93 @@
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Wild edible and medicinal plants | REALSproject</title>
+	<link href='http://fonts.googleapis.com/css?family=Crete+Round' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/globals.css">
+	<link rel="stylesheet" href="css/header.css">
+	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/main.css">
+</head>
+<body>
+	<header>
+		<h1>Wild edible and medicinal plants<span class="color">.</span></h1>
+	</header>
+	<section class="cover">
+		<div class="container">
+			<div class="row">
+				<div class="plant col-sm-4" dataId="wild">
+					<img src="img/interest-wild.png" alt="">
+					<h2>{Name}</h2>
+					<p>{Text}</p>
+				</div>
+				<div class="plant col-sm-4" dataId="edib">
+					<img src="img/interest-edib.png" alt="">
+					<h2>{Name}</h2>
+					<p>{Text}</p>
+				</div>
+				<div class="plant col-sm-4" dataId="medi">
+					<img src="img/interest-medi.png" alt="">
+					<h2>{Name}</h2>
+					<p>{Text}</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<section class="plants" class="container-fluid">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p><em>Annual (A), biennial (B) and perennial (P) plants</em></p>
+				</div>
+			</div>
+			<div class="row" id="plantsContent">
+
+			</div>
+		</div>
+	</section>
+	<section class="about">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12">
+					<p>This is a work made within the project REALS (realproject.org) and conducted by Alexandra Kuliasova (REEN Russia), Antonina Kuliasova (REEN Russia) and Emilia Rekestad (Permaculture Sweden).</p>
+					<p>The list is a beginning on a continuing dialogue around usable wild plants within our northern countries.</p>
+				</div>
+			</div>
+		</div>
+	</section>
+	<footer>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm-6">
+					<p>Many thanks to Plants For a Future (pfaf.org) for their database, which holds information on more than 7000 plants.</p>
+				</div>
+				<div class="col-sm-6 text-right">
+					REALS is financed by the Swedish Institute.
+				</div>
+			</div>
+		</div>
+	</footer>
+	<div class="template" id="tpl-plant">
+		<div class="plant col-sm-4">
+			<img src="{Image url}" alt="">
+			<h2 class="lng en">{English name}</h2>
+			<h2 class="lng se">{Swedish name}</h2>
+			<h2 class="lng ru">{Russian name}</h2>
+			<h3>{Latin name}</h3>
+			<p>{Edible use}</p>
+			<p>{Medicinal use}</p>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+	<script type="text/javascript" src="js/globals.js"></script>
+	<script type="text/javascript" src="js/vendor/tabletop.js"></script>
+	<script type="text/javascript" src="js/tabletop.js"></script>
+	<script type="text/javascript" src="js/main.js"></script>
+</body>
+</html>
