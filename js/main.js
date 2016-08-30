@@ -1,12 +1,16 @@
 $(document).ready(function(){
-	renderCover('en');
+	changeLng('en');
 	hideOtherLanguagesThan('en');
 
 	// Get spreadsheet data
 	initTabletop(function(){
 	});
 });
-function renderCover(lng) {
+/**
+ * 1. change lng in the .cover
+ * 2. change lng in the rest of the document
+ */
+function changeLng(lng) {
 	$cover=$('.cover');
 	$('.cover .plant').each(function (i,el){
 		$el=$(el);
@@ -17,6 +21,7 @@ function renderCover(lng) {
 		$el.find('p').text(text);
 	});
 
+	hideOtherLanguagesThan(lng);
 }
 function hideOtherLanguagesThan(lng){
 	$('.lng').hide();

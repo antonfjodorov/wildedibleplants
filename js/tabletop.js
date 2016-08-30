@@ -18,6 +18,7 @@ function showInfo(tabletopData, tabletopInfo, next) {
 		// 2. Parse data
 		// 3. Append item
 		if (typeof item["isLive"] === undefined || item["isLive"] === "") return;
+		$('.loading').hide();
 		
 		var dataHtml = dataTemplate;
 		var regexp, classField;

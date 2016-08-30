@@ -1,3 +1,16 @@
 header{
 	padding: 0 10px;
+	background-color: #eee;
+}
+header h1{
+	float: right;
+}
+header .lngswitcher{
+	padding-top: 20px;
+	cursor: pointer;
+}
+header .logo{
+	max-width: 70px;
+	float: left;
+	padding: 5px;
 }

@@ -6,6 +6,10 @@ section.cover{
 	background-size: cover;
 	background-position-y: 200px;
 }
+section.plants{
+	background-color: #eee;
+}
+
 .plant img{
 	max-width: 300px;
 }
@@ -14,12 +18,6 @@ section.cover{
 	color: #fcfcfc;
 }
 
-#plants{
-	background-color: #eee;
-}
-#plants .plant{
-
-}
 
 .template{
 	display: none;
