@@ -12,6 +12,7 @@ section.plants{
 
 .plant img{
 	max-width: 300px;
+	max-height: 300px;
 }
 .cover .plant{
 	text-align: center;
