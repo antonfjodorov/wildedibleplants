@@ -1,16 +1,47 @@
-header{
-	padding: 0 10px;
-	background-color: #eee;
+/* All screen sizes */
+nav{
+	padding: 0;
+	background-color: #f8f8f8;
 }
-header h1{
-	float: right;
+nav.navbar{
+	margin-bottom: 0;
 }
-header .lngswitcher{
-	padding-top: 20px;
-	cursor: pointer;
+nav.navbar.navbar-default{
+	border: 0;
 }
-header .logo{
-	max-width: 70px;
-	float: left;
+nav.navbar .navbar-toggle{
+	margin-top: 13px;
+	margin-right: 5px;
+}
+nav .navbar-brand{
+	float: none;
+	padding: 0;
+}
+
+/* Small screens <768px */
+nav .navbar-brand .logo{
 	padding: 5px;
+	max-width: 60px;
+}
+nav h1{
+	margin: 0;
+	font-size: 2rem;
+	margin-top: 20px;
+}
+
+/* Bigger screens >= 768px */
+nav .navigation{
+	padding: 13px;
+	font-size: 1.5rem;
+}
+@media (min-width:768px) {
+nav h1{
+	font-size: 3rem;
+}
+nav .navbar-brand .logo{
+	max-width: 70px;
+}
+.navbar > .container .navbar-brand{
+	margin-left: 0;
+}
 }

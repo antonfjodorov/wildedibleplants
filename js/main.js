@@ -5,7 +5,7 @@ $(document).ready(function(){
 	hideOtherLanguagesThan('en');
 
 	// enable smooth scrolling
-	initSmoothScroll();
+	// initSmoothScroll();
 
 	// Get spreadsheet data
 	initTabletop(function(){});
@@ -39,6 +39,7 @@ function initSmoothScroll(){
 }
 function initLngClickers(){
 	$('.lngClicker').click(function (e){
+		e.preventDefault();
 		var lng = e.currentTarget.attributes['dataLng'].value;
 		changeLng(lng);
 	});

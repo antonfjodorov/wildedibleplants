@@ -1,3 +1,7 @@
+.nopadding{
+	padding: 0;
+}
+
 section{
 	padding: 20px 0;
 }
@@ -10,4 +14,11 @@ h3{
 }
 html,body{
 	font-family: 'Marmelad', sans-serif;
+	padding-top: 30px;
+}
+
+@media (min-width:768px){
+html,body{
+	padding-top: 35px;
+}
 }

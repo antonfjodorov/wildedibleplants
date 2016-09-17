@@ -12,24 +12,59 @@
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
-	<header>
-		<div class="container-fluid">
-			<div class="row-fluid">
-				<div class="col-sm-9">
-					<img class="logo" src="img/logo-reals.png" alt="REALS logo">
-					<h1>Wild, edible and medicinal plants<span class="color">.</span></h1>
+	<nav class="navbar navbar-default navbar-fixed-top">
+		<div class="container">
+			<div class="row">
+				<div class="nopadding col-xs-2 col-sm-2 col-lg-3">
+					<a class="navbar-brand" href="#">
+						<img class="logo" src="img/logo-reals.png" alt="REALS">
+					</a>
 				</div>
-				<div class="col-sm-3 text-right">
-					<div class="lngswitcher">
-						<a href="#" class="lngClicker" dataLng="en">EN</a> / <a href="#" class="lngClicker" dataLng="se">SE</a> / <a href="#" class="lngClicker" dataLng="ru">RU</a>
-					</div>
-					<div>
-						<a class="scroll" href="#about">About</a>
+				<div class="col-xs-8 col-sm-6 col-lg-6">
+					<h1 class="text-center">Wild, edible plants</h1>
+				</div>
+				<div class="nopadding col-xs-2 visible-xs-block">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="col-sm-4 col-lg-3 hidden-xs navigation">
+					<span class="lngText" data-content="Section">Section</span>
+					<span><a class="scroll" href="#about">About</a></span>
+					<br>
+					<span class="lngText" data-content="Language">Language</span>
+					<span><a href="#" class="lngClicker" title="English" dataLng="en">EN</a></span> /
+					<span><a href="#" class="lngClicker" title="Svenska" dataLng="se">SE</a></span> /
+					<span><a href="#" class="lngClicker" title="Русский" dataLng="ru">RU</a></span>
+				</div>
+				<div class="visible-xs-block">
+					<div class="collapse navbar-collapse" id="navbar-collapse-1">
+						<div class="container-fluid">
+							<div class="row-fluid">
+								<div class="col-xs-6">
+									<ul class="nav navbar-nav">
+										<li class="lngText" data-content="Section">Section</li>
+										<li><a class="scroll" href="#about">About</a></li>
+									</ul>
+								</div>
+								<div class="col-xs-6">
+									<ul class="nav navbar-nav">
+										<li class="lngText" data-content="Language">Language</li>
+										<li><a href="#" class="lngClicker" dataLng="en">EN</a></li>
+										<li><a href="#" class="lngClicker" dataLng="se">SE</a></li>
+										<li><a href="#" class="lngClicker" dataLng="ru">RU</a></li>
+									</ul>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</div>
-	</header>
+	</nav>
 	<section class="cover">
 		<div class="container">
 			<div class="row">
@@ -68,8 +103,8 @@
 			<h2>About this project - Wild, edible and medicinal plants</h2>
 			<div class="row">
 				<div class="col-md-6">
-					<p>Many thanks to Plants For a Future (<a href="http://pfaf.org">pfaf.org</a>) for their database, which holds information on more than 7000 plants.</p>
 					<p>This is a work made within the project <a href="http://realsproject.org">REALS</a> and conducted by Alexandra Kuliasova (REEN Russia), Antonina Kuliasova (REEN Russia) and Emilia Rekestad (<a href="http://www.permakultur.se">Permaculture Sweden</a>).</p>
+					<p>Many thanks to Plants For a Future (<a href="http://pfaf.org">pfaf.org</a>) for their database, which holds information on more than 7000 plants.</p>
 				</div>
 				<div class="col-md-6">
 					<p>The list is a beginning on a continuing dialogue around usable wild plants within our northern countries.</p>
