@@ -21,7 +21,7 @@
 					</a>
 				</div>
 				<div class="col-xs-8 col-sm-6 col-lg-6">
-					<h1 class="text-center">Wild, edible plants</h1>
+					<h1 class="text-center lngText" dataContent="heading">Wild, edible plants</h1>
 				</div>
 				<div class="nopadding col-xs-2 visible-xs-block">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse-1" aria-expanded="false">
@@ -32,30 +32,30 @@
 					</button>
 				</div>
 				<div class="col-sm-4 col-lg-3 hidden-xs navigation">
-					<span class="lngText" data-content="Section">Section</span>
-					<span><a class="scroll" href="#about">About</a></span>
+					<span class="lngText" dataContent="Section">Section</span>
+					<span><a class="scroll lngText" href="#about" dataContent="About">About</a></span>
 					<br>
-					<span class="lngText" data-content="Language">Language</span>
+					<span class="lngText" dataContent="Language">Language</span>
 					<span><a href="#" class="lngClicker" title="English" dataLng="en">EN</a></span> /
 					<span><a href="#" class="lngClicker" title="Svenska" dataLng="se">SE</a></span> /
 					<span><a href="#" class="lngClicker" title="Русский" dataLng="ru">RU</a></span>
 				</div>
 				<div class="visible-xs-block">
 					<div class="collapse navbar-collapse" id="navbar-collapse-1">
-						<div class="container-fluid">
-							<div class="row-fluid">
+						<div class="container">
+							<div class="row">
 								<div class="col-xs-6">
 									<ul class="nav navbar-nav">
-										<li class="lngText" data-content="Section">Section</li>
-										<li><a class="scroll" href="#about">About</a></li>
+										<li class="lngText" dataContent="Section">Section</li>
+										<li><a class="scroll collapseAfterClick" href="#about">About</a></li>
 									</ul>
 								</div>
 								<div class="col-xs-6">
 									<ul class="nav navbar-nav">
-										<li class="lngText" data-content="Language">Language</li>
-										<li><a href="#" class="lngClicker" dataLng="en">EN</a></li>
-										<li><a href="#" class="lngClicker" dataLng="se">SE</a></li>
-										<li><a href="#" class="lngClicker" dataLng="ru">RU</a></li>
+										<li class="lngText" dataContent="Language">Language</li>
+										<li><a href="#" class="lngClicker collapseAfterClick" dataLng="en">EN</a></li>
+										<li><a href="#" class="lngClicker collapseAfterClick" dataLng="se">SE</a></li>
+										<li><a href="#" class="lngClicker collapseAfterClick" dataLng="ru">RU</a></li>
 									</ul>
 								</div>
 							</div>
@@ -65,35 +65,14 @@
 			</div>
 		</div>
 	</nav>
-	<section class="cover">
-		<div class="container">
-			<div class="row">
-				<div class="plant col-sm-4" dataId="wild">
-					<img src="img/interest-wild.png" alt="">
-					<h2>{Name}</h2>
-					<p>{Text}</p>
-				</div>
-				<div class="plant col-sm-4" dataId="edib">
-					<img src="img/interest-edib.png" alt="">
-					<h2>{Name}</h2>
-					<p>{Text}</p>
-				</div>
-				<div class="plant col-sm-4" dataId="medi">
-					<img src="img/interest-medi.png" alt="">
-					<h2>{Name}</h2>
-					<p>{Text}</p>
-				</div>
-			</div>
-		</div>
-	</section>
 	<section class="plants" class="container-fluid">
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12">
-					<p><em>Annual (A), biennial (B) and perennial (P) plants</em></p>
+					<em><p class="lngText" dataContent="ABPtext">Annual (A), biennial (B) and perennial (P) plants.</p></em>
 				</div>
 			</div>
-			<div class="row" id="plantsContent">
+			<div id="plantsContent">
 				<p class="loading text-center">Please wait, your plants are being harvested ...</p>
 			</div>
 		</div>
@@ -128,13 +107,25 @@
 	</footer>
 	<div class="template" id="tpl-plant">
 		<div class="plant col-sm-4">
-			<img src="{Image url}" alt="">
-			<h2 class="lng en">{English name}</h2>
-			<h2 class="lng se">{Swedish name}</h2>
-			<h2 class="lng ru">{Russian name}</h2>
-			<h3>{Latin name}</h3>
-			<p>{Edible use}</p>
-			<p>{Medicinal use}</p>
+			<div class="plant-inner">
+				<div class="imgw" style="background-image: url('{Image_url}')"></div>
+				<div class="hw">
+					<h2 class="lng en">{Name_EN}</h2>
+					<h2 class="lng se">{Name_SE}</h2>
+					<h2 class="lng ru">{Name_RU}</h2>
+					<h3>{Name_latin}</h3>
+				</div>
+				<div class="pw">
+					<h4 class="lngText" dataContent="EdibUse">Edible use</h4>
+					<p class="lng en">{Edible_use_EN}</p>
+					<p class="lng se">{Edible_use_SE}</p>
+					<p class="lng ru">{Edible_use_RU}</p>
+					<h4 class="lngText" dataContent="MediUse">Medical use</h4>
+					<p class="lng en">{Medicinal_use_EN}</p>
+					<p class="lng se">{Medicinal_use_SE}</p>
+					<p class="lng ru">{Medicinal_use_RU}</p>
+				</div>
+			</div>
 		</div>
 	</div>
 

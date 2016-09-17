@@ -14,14 +14,12 @@ $(document).ready(function(){
  * 1. change lng in the .cover
  * 2. change lng in the rest of the document
  */
-function changeLng(lng) {
-	$('.cover .plant').each(function (i,el){
+function changeLng(lng){
+	$('.lngText').each(function (i,el){
 		$el=$(el);
-		var id=el.attributes['dataId'].value;
-		var name=coverStrings[lng][id]['Name'];
-		var text=coverStrings[lng][id]['Text'];
-		$el.find('h2').text(name);
-		$el.find('p').text(text);
+		var keyText=el.attributes['dataContent'].value;
+		var translation = lngStrings[keyText][lng];
+		$el.text(translation);
 	});
 	
 	hideOtherLanguagesThan(lng);
@@ -38,9 +36,12 @@ function initSmoothScroll(){
 	});
 }
 function initLngClickers(){
-	$('.lngClicker').click(function (e){
+	$('.lngClicker').click(function(e){
 		e.preventDefault();
 		var lng = e.currentTarget.attributes['dataLng'].value;
 		changeLng(lng);
+	});
+	$('.collapseAfterClick').click(function(e){
+		$('#navbar-collapse-1').collapse('hide');
 	});
 }
