@@ -1,10 +1,11 @@
 /* All screen sizes */
 nav{
 	padding: 0;
-	background-color: #f8f8f8;
 }
 nav.navbar{
 	margin-bottom: 0;
+	background-color: #50432B;
+	color: white;
 }
 nav.navbar.navbar-default{
 	border: 0;
@@ -12,6 +13,7 @@ nav.navbar.navbar-default{
 nav.navbar .navbar-toggle{
 	margin-top: 13px;
 	margin-right: 5px;
+	border: 0;
 }
 nav .navbar-brand{
 	float: none;
@@ -25,17 +27,19 @@ nav .navbar-brand .logo{
 }
 nav h1{
 	margin: 0 -20px;
-	font-size: 2rem;
+	font-size: 2.2rem;
 	margin-top: 20px;
 }
 #navbar-collapse-1{
 	position: absolute;
 	left: 0;
-	top: 61px;
+	top: 60px;
 	height: 156px;
 	width: 100%;
-	background-color: #f8f8f8;
 	text-align: center;
+	background-color: #f8f8f8;
+	color: #50432B;
+	box-shadow: 0 0 3px #50432B;
 }
 
 /* Bigger screens >= 768px */
@@ -43,14 +47,21 @@ nav .navigation{
 	padding: 13px;
 	font-size: 1.5rem;
 }
-@media (min-width:768px) {
+@media (min-width:768px){
 nav h1{
 	font-size: 3rem;
+	letter-spacing: 1px;
 }
 nav .navbar-brand .logo{
 	max-width: 70px;
 }
 .navbar > .container .navbar-brand{
 	margin-left: 0;
+}
+}
+@media (min-width:992px){
+nav h1{
+	font-size: 3.5rem;
+	letter-spacing: 2px;
 }
 }

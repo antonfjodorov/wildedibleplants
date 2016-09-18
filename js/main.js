@@ -41,7 +41,12 @@ function initLngClickers(){
 		var lng = e.currentTarget.attributes['dataLng'].value;
 		changeLng(lng);
 	});
-	$('.collapseAfterClick').click(function(e){
+	$('.collapseAfterClick').mousedown(function(e){
 		$('#navbar-collapse-1').collapse('hide');
+	});
+	$('.collapseAfterTouch').each(function(i,el){
+		el.addEventListener('touchstart', function(e){
+			$('#navbar-collapse-1').collapse('hide');
+		});
 	});
 }

@@ -1,24 +1,24 @@
-.nopadding{
-	padding: 0;
-}
-
-section{
-	padding: 20px 0;
-}
-h1,h2{
-	font-family: 'Crete Round', sans-serif;
-}
-h3{
-	font-size: 16px;
-	font-style: italic;
+@font-face{
+	font-family: 'Hojas plata';
+	src:url('../fonts/Hojas plata 0.2.otf');
 }
 html,body{
-	font-family: 'Marmelad', sans-serif;
-	padding-top: 30px;
+	font-family:'Marmelad', sans-serif;
+	color: #50432B;
+	padding-top:30px;
 }
 
 @media (min-width:768px){
-html,body{
-	padding-top: 35px;
+html,body{ padding-top:35px; }
 }
+a,a:visited{ color:#d85509; }
+a:hover,a:active{ color:#a14102; text-decoration:none; }
+h1{
+	font-family:'Hojas plata', sans-serif;
 }
+h2{
+	font-family:'Crete Round', sans-serif;
+}
+h3{ font-size:16px; font-style:italic; }
+section{ padding:20px 0; }
+.nopadding{ padding:0; }

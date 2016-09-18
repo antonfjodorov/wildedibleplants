@@ -3,19 +3,24 @@ section.about{
 }
 section.plants{
 	background-color: #fcfcfc;
+	background-image: url("http://realsproject.org/wp-content/uploads/2014/01/backgr31.png");
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-attachment: fixed;
 }
 .plant.col-sm-4{
 	padding: 0 10px 20px;
 }
 .plant .plant-inner{
-	box-shadow: 0 0 2px grey;
+	box-shadow: 0 0 3px #50432B;
+	background-color: white;
 }
 .plant .hw, .plant .pw{
 	padding: 10px;
 }
 .plant h2{
 	line-height: 36px;
-	color: rgba(0,0,0,0.87);
+	color: #50432B;
 }
 .plant h3{
 	color: rgba(0,0,0,0.54);
