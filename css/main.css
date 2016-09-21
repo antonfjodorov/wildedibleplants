@@ -1,4 +1,8 @@
-section.about{
+section#intro{
+	background-color: #C0B39B;
+	color: black;
+}
+section#about-reals{
 	background-color: antiquewhite;
 }
 section.plants{
