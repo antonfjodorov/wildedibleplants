@@ -97,7 +97,7 @@ nav .handle{
 	padding: 10px;
 	border-bottom-left-radius: 20px;
 }
-nav .handle #handle-hide{
+nav .handle .favHandle-hide{
 	display: none;
 }
 /* Bigger screens >= 768px */

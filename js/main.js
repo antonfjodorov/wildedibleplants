@@ -48,12 +48,12 @@ function initFavClickers(){
 	$('.handleFavClick').click(function(e){
 		if ($('#favs.is-visible').length){
 			$('#favs.is-visible').removeClass('is-visible');
-			$('#handle-show').show();
-			$('#handle-hide').hide();
+			$('.favHandle-show').show();
+			$('.favHandle-hide').hide();
 		} else {
 			$('#favs').addClass('is-visible');
-			$('#handle-show').hide();
-			$('#handle-hide').show();
+			$('.favHandle-show').hide();
+			$('.favHandle-hide').show();
 		}
 	});
 	// Add to favs
