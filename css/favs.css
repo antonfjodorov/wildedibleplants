@@ -46,6 +46,9 @@ aside#favs a{
 aside#favs .info{
 	padding: 0 5px;
 }
+aside#favs .info-hasitems{
+	display: none;
+}
 aside#favs img{
 	height: 50px;
 	width: 50px;
