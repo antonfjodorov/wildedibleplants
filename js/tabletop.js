@@ -30,6 +30,8 @@ function showInfo(tabletopData, tabletopInfo, next){
 			regexp = "{"+keys[i]+"}";
 			colHtml = colHtml.replace(new RegExp(regexp, "g"), item[keys[i]]);
 		}
+		var id = item['Name_latin'].replace(/ /g, '_').replace(/\(/g, '').replace(/\)/g, '');
+		colHtml = colHtml.replace(new RegExp('{id}', "g"), id);
 
 		rowHtml = rowHtml + colHtml;
 		if ((j+1)%3==0 || j+1==tabletopDataLength){

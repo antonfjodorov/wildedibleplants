@@ -4,6 +4,7 @@ lngStrings={
 'EdibName':	{'en':'Edible plants',							'se':'Ätbara växter',						'ru':'Съедобные растения'},
 'EdibText':	{'en':'Nature has many tasty foods',			'se':'Naturen har många godsaker',			'ru':'У природы есть много вкусного'},
 'EdibUse':	{'en':'For food',								'se':'Som mat',								'ru':'Как приготовить'},
+'Favourites':{'en':'My Favourites',							'se':'Mina favoriter',						'ru':'Мои избранные'},
 'heading':	{'en':'Wild, edible plants',					'se':'Vilda, ätbara växter',				'ru':'Дикие, съедобные растения'},
 'intro1':	{'en':'The old, revered knowledge of edible plants and natural medicines is getting forgotten.',
 			 'se':'Den gamla, vördade kunskapen om ätbara plantor och naturliga mediciner håller på att falla i glömska.',

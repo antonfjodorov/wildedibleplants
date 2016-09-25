@@ -15,6 +15,12 @@ nav.navbar .navbar-toggle{
 	margin-right: 5px;
 	border: 0;
 }
+nav.navbar .navbar-toggle:focus, nav.navbar .navbar-toggle:active, nav.navbar .navbar-toggle:hover{
+	background-color: #50432B;
+}
+nav.navbar .navbar-toggle .icon-bar{
+	background-color: white;
+}
 nav .navbar-brand{
 	float: none;
 	padding: 0;
