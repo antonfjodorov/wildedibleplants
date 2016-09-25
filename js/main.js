@@ -122,7 +122,7 @@ function appendToFavsVirtualView(id){
  *  Extracts necessary info from clicked obj
  */
 function extractObjFromId(id){
-	var maxL = 27;
+	var maxL = 25;
 	var Image_url = $('#'+id+'-Image_url').attr('dataImageUrl');
 	var obj = {
 		'id': id,
