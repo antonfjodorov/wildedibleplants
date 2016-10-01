@@ -1,6 +1,7 @@
 section#intro{
-	background-color: #C0B39B;
-	color: black;
+	background-color: #50432B;
+	color: white;
+	border-top: 1px solid white;
 }
 section#about-reals{
 	background-color: antiquewhite;
