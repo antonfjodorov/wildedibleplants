@@ -51,13 +51,12 @@ section.plants{
 .plant .imgw .imgsrc{
 	position: absolute;
 	right: 10px;
-	top: 264px;
-	padding: 8px;
-	background-color: rgba(0,0,0,0.7);
+	top: 270px;
+	padding: 5px 8px;
+	background-color: rgba(0,0,0,0.4);
 	border-top-left-radius: 8px;
-}
-.plant .imgw .imgsrc{
-	color: #f87529;
+	color: rgba(255,255,255,0.4);
+	cursor: default;
 }
 .cover .plant{
 	text-align: center;
