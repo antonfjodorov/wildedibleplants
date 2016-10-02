@@ -32,6 +32,9 @@ function showInfo(tabletopData, tabletopInfo, next){
 		}
 		var id = item['Name_latin'].replace(/ /g, '_').replace(/\(/g, '').replace(/\)/g, '');
 		colHtml = colHtml.replace(new RegExp('{id}', "g"), id);
+		var imgDomain = item['Image_url'].replace('http://','').replace('https://','').split(/[/?#]/)[0];
+		imgDomain = imgDomain.substring(imgDomain.indexOf('.')+1);
+		colHtml = colHtml.replace(new RegExp('{Image_domain}', "g"), imgDomain);
 
 		rowHtml = rowHtml + colHtml;
 		if ((j+1)%3==0 || j+1==tabletopDataLength){
