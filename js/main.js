@@ -12,6 +12,7 @@ $(document).ready(function(){
 		// init fav clickers
 		initFavClickers();
 		populateFavsFirstTime();
+		renderResponsiveGrid();
 	});
 });
 function initLngClickers(){
@@ -19,6 +20,7 @@ function initLngClickers(){
 		e.preventDefault();
 		var lng = e.currentTarget.attributes['dataLng'].value;
 		changeLng(lng);
+		renderResponsiveGrid();
 	});
 	$('.collapseAfterClick').mousedown(function(e){
 		$('#navbar-collapse-1').collapse('hide');
@@ -192,4 +194,10 @@ function populateFavsFirstTime(){
 		$('#'+favs[i]+'-hearthover').show();
 	}
 	renderFavsView();
+}
+/*
+ * Masonry
+ */
+function renderResponsiveGrid(){
+	$('#plantsContent').masonry({ itemSelector:'.plant'})
 }
