@@ -10,6 +10,7 @@
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/favs.css">
 	<link rel="stylesheet" href="css/footer.css">
+	<link rel="stylesheet" href="css/accept-cookie.css">
 	<link rel="stylesheet" href="css/main.css">
 </head>
 <body>
@@ -91,6 +92,17 @@
 		<div id="favsContent">
 		</div>
 	</aside>
+	<div id="cookiesPopup">
+		<div class="collapse in cookiesPopupCollapse">
+			<span class="lngText" dataContent="cookie1">This site uses cookies.</span>
+			<a href=".cookiesPopupCollapse" role="button" data-toggle="collapse"><span class="lngText" dataContent="ReadMore">Read more</span></a>
+			<button class="lngText" dataContent="IAccept">I accept</button>
+		</div>
+		<div class="collapse cookiesPopupCollapse">
+			<span class="lngText" dataContent="cookie2">Cookies are used to store your favourite plants and whether you accepted this cookie policy.</span>
+			<button class="lngText" dataContent="OkIAccept">Ok, I accept</button>
+		</div>
+	</div>
 	<section id="intro">
 		<div class="container">
 			<div class="row">
@@ -184,6 +196,10 @@
 	<script type="text/javascript" src="js/vendor/tabletop.js"></script>
 	<script type="text/javascript" src="js/vendor/cookies-js.min.js"></script>
 	<script type="text/javascript" src="js/tabletop.js"></script>
+	<script type="text/javascript" src="js/accept-cookie.js"></script>
+	<script type="text/javascript" src="js/favs.js"></script>
+	<script type="text/javascript" src="js/lng.js"></script>
+	<script type="text/javascript" src="js/masonry.js"></script>
 	<script type="text/javascript" src="js/main.js"></script>
 </body>
 </html>

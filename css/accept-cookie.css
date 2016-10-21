@@ -1,0 +1,33 @@
+#cookiesPopup{
+	display: none;
+	position: fixed;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	text-align: center;
+	padding: 8px;
+	background-color: #a14102;
+	color: white;
+	z-index: 1030;
+}
+#cookiesPopup a{
+	color: white;
+	text-decoration: underline;
+}
+#cookiesPopup button{
+	background-color: #50432B;
+	border: 1px solid white;
+	padding: 5px 7px;
+	margin: 0 20px;
+	border-radius: 5px;
+	cursor: pointer;
+	color: white;
+}
+#cookiesPopup button:hover{
+	background-color: white;
+	border: 1px solid #50432B;
+	color: #50432B;
+	-webkit-transition: all 0.2s ease;
+	-moz-transition: all 0.2s ease;
+	-o-transition: all 0.2s ease;
+}
