@@ -21,8 +21,8 @@ function initFavClickers(){
 		$(e.currentTarget).hide();
 		$('#'+id+'-hearthover').show();
 
-		var favsCookie = Cookies.get('favs');
-		if (typeof favsCookie === "undefined" || favsCookie == ""){
+		var favsCookie = readCookie('favs');
+		if (favsCookie == ""){
 			favsCookie = JSON.stringify([id]);
 		} else {
 			var favs = JSON.parse(favsCookie);

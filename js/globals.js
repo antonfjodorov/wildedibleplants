@@ -1,3 +1,4 @@
+lngLanguages=['en','se','ru'];
 lngStrings={
 'about1':	{'en':'REALS run between September 2013 and August 2016. It was a creative forum and platform for diverse conversations, practical activities, exchange of experience and knowledge, new projects, long lasting friendship and - not the least - dissemination of future solutions for a healthy planet.',
 			 'se':'REALS varade mellan september 2013 och augusti 2016. Det var ett kreativt forum och plattform för en mångfald av konversationer, praktiska aktiviteter, utbyte av erfarenhet och kunskap, nya projekt, långvarig vänskap och - inte minst - spridning av framtida lösningar för en frisk planet.',

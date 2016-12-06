@@ -65,3 +65,8 @@ gulp.task('default', [
 		'index'
 	], function(){}
 );
+gulp.task('watch', function(){
+	gulp.watch(paths.src.css, ['css']);
+	gulp.watch(paths.src.js, ['js']);
+	gulp.watch(paths.src.index, ['index']);
+});

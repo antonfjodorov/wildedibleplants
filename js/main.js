@@ -1,9 +1,7 @@
 $(document).ready(function(){
 	// Set language
 	initLngClickers();
-	changeLng('en');
-	hideOtherLanguagesThan('en');
-	/* accept-cookies.js */
+	setLngFromCookie();
 	showAcceptCookiesPopup();
 
 	// Get spreadsheet data
