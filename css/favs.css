@@ -25,26 +25,22 @@ aside#favs header{
 	margin-left: -5px;
 	margin-right: -5px;
 	margin-top: -5px;
-	padding: 4px 10px;
-	cursor: pointer;
-}
-aside#favs header:hover{
-	background-color: #C0B39B;
-	-webkit-transition: all 0.3s ease;
-	-moz-transition: all 0.3s ease;
-	-o-transition: all 0.3s ease;
-}
-aside#favs header:hover::after{
-	content: '(close)';
-	float: right;
-	padding-right: 5px;
+	cursor: default;
+	padding: 5px 5px;
+	font-size: 1.3em;
+	background-color: rgba(80,67,43,.8);
+	color: white;
 }
 aside#favs a{
 	color: #50432B;
 	text-decoration: none;
 }
 aside#favs .info{
-	padding: 0 5px;
+	cursor: default;
+    background-color: rgba(80,67,43,.8);
+    color: white;
+    margin: 0 -5px;
+    padding: 5px 5px;
 }
 aside#favs .info-hasitems{
 	display: none;
@@ -70,13 +66,10 @@ aside#favs .fav{
 aside#favs .fav p{
 	margin: 0;
 }
-.plant .fav{
-	position: relative;
-}
 .plant .fav span{
 	position: absolute;
-	top: 10px;
-	right: 10px;
+	top: 20px;
+	right: 15px;
 	font-size: 2rem;
 	cursor: pointer;
 }

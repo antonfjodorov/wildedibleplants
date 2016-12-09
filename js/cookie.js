@@ -35,8 +35,7 @@ function writeCookie(cookie, k, v){
 	Cookies.set(cookie, c, { expires:Infinity });
 }
 function showAcceptCookiesPopup(){
-	var settingsCookie = Cookies.get('settings');
-	if (typeof settingsCookie === "undefined" || settingsCookie == ""){
+	if (readCookie('settings') == ""){
 		$('#cookiesPopup').show();
 	}
 }

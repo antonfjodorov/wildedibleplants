@@ -12,6 +12,7 @@
 	<link rel="stylesheet" href="css/favs.css">
 	<link rel="stylesheet" href="css/footer.css">
 	<link rel="stylesheet" href="css/cookie.css">
+	<link rel="stylesheet" href="css/lng.css">
 	<link rel="stylesheet" href="css/main.css">
 	<!-- endbuild -->
 </head>
@@ -69,6 +70,7 @@
 								<div class="col-xs-6">
 									<ul class="nav navbar-nav">
 										<li class="lngText" dataContent="Section">Section</li>
+										<li><a class="scroll lngText collapseAfterClick" href="#" dataContent="Tothetop">To the top</a></li>
 										<li><a class="scroll lngText collapseAfterClick" href="#about-reals" dataContent="About REALS">About REALS</a></li>
 									</ul>
 								</div>
@@ -88,7 +90,7 @@
 		</div>
 	</nav>
 	<aside id="favs">
-		<header class="handleFavClick lngText" dataContent="Favourites">My Favourites</header>
+		<header class="lngText" dataContent="Favourites">My Favourites</header>
 		<p class="info info-noitems lngText" dataContent="favsNoitems">You have not marked any plants as favourite yet. Do it by clicking on the heart symbol on a plant.</p>
 		<p class="info info-hasitems lngText" dataContent="favsHasitems">Click on an item to quickly find it on the website.</p>
 		<div id="favsContent">
@@ -110,11 +112,11 @@
 			<div class="row">
 				<div class="col-md-6">
 					<p class="lngText" dataContent="intro1">The revered old knowledge about edible plants and natural medicines is getting forgotten.</p>
-					<p><span class="lngText" dataContent="intro2.1">But with the help of the</span><a href="http://pfaf.org">Plants For a Future</a><span class="lngText" dataContent="intro2.2">database with 7000+ records of beneficial plants, the knowledge stays intact for generations to come.</span></p>
+					<p><span class="lngText" dataContent="intro2.1">But with the help of the</span><a href="http://pfaf.org"><span class="lngText" dataContent="pfaf">Plants For a Future</span></a><span class="lngText" dataContent="intro2.2">database with 7000+ records of beneficial plants, the knowledge stays intact for generations to come.</span></p>
 				</div>
 				<div class="col-md-6">
 					<p class="lngText" dataContent="intro3">The list below is a subset of this large database, depicting plants growing in the Nordic countries.</p>
-					<p><span class="lngText" dataContent="intro4.1">The list is under continued dialogue within the</span><a href="http://realsproject.org">REALS</a><span class="lngText" dataContent="intro4.2">project and is conducted by Alexandra Kuliasova (REEN Russia), Antonina Kuliasova (REEN Russia) and Emilia Rekestad</span> (<a href="http://www.permakultur.se"><span class="lngText" dataContent="PermacultureSweden">Permaculture Sweden</span></a>). <span class="lngText" dataContent="intro4.3">Website by Anton Fjodorov.</span></p>
+					<p><span class="lngText" dataContent="intro4.1">The list is under continued dialogue within the</span><a href="http://realsproject.org">REALS</a><span class="lngText" dataContent="intro4.2">project and is conducted by Alexandra Kuliasova (REEN Russia), Antonina Kuliasova (REEN Russia) and Emilia Rekestad</span> (<a href="http://www.permakultur.se"><span class="lngText" dataContent="PermacultureSweden">Permaculture Sweden</span></a>). <span class="lngText" dataContent="intro4.3">Website by</span> <a href="https://github.com/antonfjodorov"><span class="lngText" dataContent="byAntonFjodorov">Anton Fjodorov</span></a>.</p>
 				</div>
 			</div>
 		</div>
@@ -145,21 +147,32 @@
 			</div>
 		</div>
 	</footer>
-	<div class="template" id="tpl-plant">
-		<div class="plant col-sm-4 col-xs-12">
+	<script type="text/javascript"></script>
+	<template id="tpl-plant">
+		<div class="plant col-sm-4 col-xs-12" id="{id}-plant">
 			<a name="{id}"></a>
 			<div class="plant-inner">
 				<div id="{id}-Image_url" class="imgw" style="background-image: url('{Image_url}')" dataImageUrl="{Image_url}">
 					<span class="imgsrc">{Image_domain}</span>
 				</div>
-				<div class="fav">
-					<span id="{id}-heart" class="glyphicon glyphicon-heart-empty heart" dataId="{id}"></span>
-					<span id="{id}-hearthover" class="glyphicon glyphicon-heart hearthover" dataId="{id}"></span>
+				<div class="header">
+					<div id="{id}-lngw_info" class="lngInfo"><span class="lngText" dataContent="QuickInfo">Quick translation</span>:</div>
+					<div class="lngw" id="{id}-lngw" dataId="{id}">
+						<span id="{id}-lngw_en" class="lngClicker active" dataLng="en" dataId="{id}">en</span>
+						<span id="{id}-lngw_se" class="lngClicker" dataLng="se" dataId="{id}">se</span>
+						<span id="{id}-lngw_ru" class="lngClicker" dataLng="ru" dataId="{id}">ru</span>
+						<span id="{id}-lngw_rut" class="lngClicker" dataLng="rut" dataId="{id}">ru-translit</span>
+					</div>
+					<div class="fav">
+						<span id="{id}-heart" class="glyphicon glyphicon-heart-empty heart" dataId="{id}"></span>
+						<span id="{id}-hearthover" class="glyphicon glyphicon-heart hearthover" dataId="{id}"></span>
+					</div>
 				</div>
 				<div class="hw">
 					<h2 id="{id}-Name_EN" class="lng en">{Name_EN}</h2>
 					<h2 id="{id}-Name_SE" class="lng se">{Name_SE}</h2>
 					<h2 id="{id}-Name_RU" class="lng ru">{Name_RU}</h2>
+					<h2 id="{id}-Name_RUT" class="lng rut" dataSpeech="{Name_RU}">{Name_RUT}</h2>
 					<h3 id="{id}-Name_latin">{Name_latin}</h3>
 				</div>
 				<div class="pw">
@@ -167,28 +180,32 @@
 					<p id="{id}-Edible_use_EN" class="lng en">{Edible_use_EN}</p>
 					<p id="{id}-Edible_use_SE" class="lng se">{Edible_use_SE}</p>
 					<p id="{id}-Edible_use_RU" class="lng ru">{Edible_use_RU}</p>
+					<p id="{id}-Edible_use_RUT" class="lng rut" dataSpeech="{Edible_use_RU}">{Edible_use_RUT}</p>
 					<h4 class="lngText" dataContent="MediUse">Medical use</h4>
 					<p class="lng en">{Medicinal_use_EN}</p>
 					<p class="lng se">{Medicinal_use_SE}</p>
 					<p class="lng ru">{Medicinal_use_RU}</p>
+					<p class="lng rut" dataSpeech="{Medicinal_use_RU}">{Medicinal_use_RUT}</p>
 				</div>
 			</div>
 		</div>
-	</div>
-	<div class="template" id="tpl-fav">
+	</template>
+	<template id="tpl-fav">
 		<a href="#{id}">
 			<div class="fav">
 				<img src="{Image_url}">
 				<h3 id="{id}-Name_EN_cut" class="lng en">{Name_EN_cut}</h3>
 				<h3 id="{id}-Name_SE_cut" class="lng se">{Name_SE_cut}</h3>
 				<h3 id="{id}-Name_RU_cut" class="lng ru">{Name_RU_cut}</h3>
+				<h3 id="{id}-Name_RUT_cut" class="lng rut">{Name_RUT_cut}</h3>
 				<h3>{Name_latin_cut}</h3>
 				<p id="{id}-Edible_use_EN_cut" class="lng en">{Edible_use_EN_cut}</p>
 				<p id="{id}-Edible_use_SE_cut" class="lng se">{Edible_use_SE_cut}</p>
 				<p id="{id}-Edible_use_RU_cut" class="lng ru">{Edible_use_RU_cut}</p>
+				<p id="{id}-Edible_use_RUT_cut" class="lng rut">{Edible_use_RUT_cut}</p>
 			</div>
 		</a>
-	</div>
+	</template>
 
 	<!-- Scripts -->
 	<script type="text/javascript" src="https://code.jquery.com/jquery-2.2.0.min.js"></script>
@@ -198,8 +215,9 @@
 	<script type="text/javascript" src="js/globals.js"></script>
 	<script type="text/javascript" src="js/vendor/tabletop.js"></script>
 	<script type="text/javascript" src="js/vendor/cookies-js.min.js"></script>
+	<script type="text/javascript" src="js/vendor/artyom.js"></script>
 	<script type="text/javascript" src="js/tabletop.js"></script>
-	<script type="text/javascript" src="js/accept-cookie.js"></script>
+	<script type="text/javascript" src="js/cookie.js"></script>
 	<script type="text/javascript" src="js/favs.js"></script>
 	<script type="text/javascript" src="js/lng.js"></script>
 	<script type="text/javascript" src="js/masonry.js"></script>

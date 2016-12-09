@@ -1,8 +1,10 @@
 $(document).ready(function(){
-	// Set language
-	initLngClickers();
-	setLngFromCookie();
 	showAcceptCookiesPopup();
+	populateTransliterations();
+	artyom.initialize({
+		lang: 'ru-RU',
+		debug: false
+	});
 
 	// Get spreadsheet data
 	initTabletop(function(){
@@ -11,6 +13,9 @@ $(document).ready(function(){
 		$("aside#favs")[0].style.maxHeight=favsMaxHeight+"px";
 		initFavClickers();
 		populateFavsFirstTime();
+
+		initLngClickers();
+		setLngFromCookie();
 
 		/* Masonry.js */
 		renderResponsiveGrid();

@@ -1,0 +1,40 @@
+.plant .lngw{
+	margin: 5px 0;
+}
+.plant .lngw .lngClicker{
+	cursor: pointer;
+	padding: 1px 7px 5px;
+	position: relative;
+	color: white;
+}
+.plant .lngw .lngClicker.active,
+.plant .lngw .lngClicker.active:hover,
+.plant .lngw .lngClicker.active:active{
+	cursor: default;
+	color: white;
+	background-color: rgba(0,0,0,.4);
+}
+.plant .lngw .lngClicker:hover,
+.plant .lngw .lngClicker:active{
+	background-color: white;
+	color: rgba(80, 67, 43, 0.8);
+	transition: all 0.2s ease;
+}
+.plant .lngw .lngInfo{
+	display: none;
+}
+.plant .lngw .lngInfo.active{
+	position: relative;
+	display: inline;
+	top: 2px;
+	transition: all 0.2s ease;
+}
+.plant .transliteration{
+	color: grey;
+	font-style: italic;
+}
+.plant [dataSpeech]{
+	text-decoration: underline;
+	color: #DAA520;
+	cursor: pointer;
+}

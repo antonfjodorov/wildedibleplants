@@ -20,6 +20,12 @@ section.plants{
 	box-shadow: 0 0 3px #50432B;
 	background-color: white;
 }
+.plant .header{
+	background-color: rgba(80, 67, 43, 0.8);
+	color: white;
+	padding: 5px 15px;
+	position: relative;
+}
 .plant .hw, .plant .pw{
 	padding: 10px;
 }
@@ -48,7 +54,4 @@ section.plants{
 .cover .plant{
 	text-align: center;
 	color: #fcfcfc;
-}
-.template{
-	display: none;
 }
