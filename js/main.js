@@ -1,4 +1,7 @@
 $(document).ready(function(){
+	var sectionPicHeight = $(screen)[0].availHeight - 300;
+	$('section#pic')[0].style.height = sectionPicHeight+'px';
+
 	showAcceptCookiesPopup();
 	populateTransliterations();
 	artyom.initialize({

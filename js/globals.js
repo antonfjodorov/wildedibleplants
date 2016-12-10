@@ -1,6 +1,6 @@
 lngLanguages=['en','se','ru','rut'];
 lngStrings={
-'about1':	{'en':'REALS run between September 2013 and August 2016. It was a creative forum and platform for diverse conversations, practical activities, exchange of experience and knowledge, new projects, long lasting friendship and - not the least - dissemination of future solutions for a healthy planet.',
+'about1':	{'en':'REALS ran between September 2013 and August 2016. It was a creative forum and platform for diverse conversations, practical activities, exchange of experience and knowledge, new projects, long lasting friendship and - not the least - dissemination of future solutions for a healthy planet.',
 			 'se':'REALS varade mellan september 2013 och augusti 2016. Det var ett kreativt forum och plattform för en mångfald av konversationer, praktiska aktiviteter, utbyte av erfarenhet och kunskap, nya projekt, långvarig vänskap och - inte minst - spridning av framtida lösningar för en frisk planet.',
 			 'ru':'REALS длился с сентября 2013 по август 2016. Это был творческий форум и площадка для разнообразных переговоров, практических мероприятий, обмена опыта и знаний, новых проектов, долговечной дружбы и, конечно же, для распространения будущих решений для здоровой планеты.'},
 'about2':	{'en':'The name stands for Resilient and Ecological Approaches for Living Sustainably. Read more',
@@ -27,6 +27,9 @@ lngStrings={
 			   'se':'Klicka på en växt här under för att hitta den snabbt på sidan.',
 			   'ru':'Кликните на одно из растений ниже, чтобы быстро найти его на странице.'},
 'heading':	{'en':'Wild, edible plants',					'se':'Vilda, ätbara växter',				'ru':'Дикие, съедобные растения'},
+'headerMedi':{'en':'Medicinal and edible plants in the Nordic region',
+			  'se':'Medicinska och ätbara växter i den nordiska regionen',
+			  'ru':'Лечебные и съедобные травы в северном регионе'},
 'IAccept':	{'en':'I accept',								'se':'Acceptera',							'ru':'Принять'},
 'intro1':	{'en':'The revered old knowledge about edible plants and natural medicines is getting forgotten.',
 			 'se':'Den vördade gamla kunskapen om ätbara plantor och naturliga mediciner håller på att falla i glömska.',

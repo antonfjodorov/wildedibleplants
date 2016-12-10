@@ -1,7 +1,25 @@
+section#pic{
+	background: url('../img/background-thistle.jpg');
+	background-size: cover;
+	background-position-y: center;
+}
+section#pic .hw{
+	padding: 20px 50px;
+	color: white;
+	background-color: rgba(161,65,2,0.2)
+}
+@media (min-width:768px){
+section#pic .hw{
+	margin-top: 50px;
+}
+section#pic .hw h2{
+	width: 500px;
+	margin: 0 auto 0 5%;
+}
+}
 section#intro{
 	background-color: #50432B;
 	color: white;
-	border-top: 1px solid white;
 }
 section#about-reals{
 	background-color: antiquewhite;
