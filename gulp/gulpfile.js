@@ -17,11 +17,13 @@ var paths = {
 		index:SRC+'index.html'
 	},
 	dest:{
-		css:  DEST+'/',
+		css:  DEST+'css/',
 		fonts:DEST+'fonts/',
 		img:  DEST+'img/',
-		js:   DEST+'/',
-		index:DEST+'/'
+		js:   DEST+'js/',
+		index:DEST+'/',
+		bundlecss:'css/',
+		bundlejs: 'js/',
 	},
 	bundle:{
 		css: 'bundle.min.css',
@@ -52,8 +54,8 @@ gulp.task('fonts', function(){
 gulp.task('index', function(){
 	return gulp.src(paths.src.index)
 	.pipe(htmlReplace({
-		css:paths.bundle.css,
-		js:paths.bundle.js
+		css:paths.dest.bundlecss + paths.bundle.css,
+		js: paths.dest.bundlejs  + paths.bundle.js
 	}))
 	.pipe(gulp.dest(paths.dest.index));
 });
