@@ -35,6 +35,7 @@ function initFavClickers(){
 
 		appendToFavsVirtualView(id);
 		virtualToRealView();
+		setLngFromCookie();
 
 		// Pulse heart
 		$('nav .handle').addClass('pulse');
@@ -69,6 +70,7 @@ function initFavClickers(){
 
 		removefromFavsVirtualView(id);
 		virtualToRealView();
+		setLngFromCookie();
 	});
 }
 var favsVirtualView = {};
