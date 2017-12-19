@@ -18,6 +18,16 @@ function initTabletop(next){
 		});
 	}
 }
+function sortTabletopData(tabletopData, lngCode){
+	var sortNames = {
+		'la': 'Name_latin',
+		'en': 'Name_EN',
+		'se': 'Name_SE',
+		'ru': 'Name_RU'
+	};
+	tabletopData.sort(function(a,b){return a[sortNames[lngCode]].localeCompare(b[sortNames[lngCode]]);});
+	return tabletopData;
+}
 /**
  * Data has been fetched from database, now display it.
  * 1. Data must be manually confirmed. If not confirmed, go on to next item.
@@ -34,6 +44,7 @@ function showInfo(tabletopData, tabletopInfo, next){
 	var tabletopDataLength = tabletopData.length
 	var rowHtml = "";
 	var colHtml = "";
+	tabletopData = sortTabletopData(tabletopData, 'la');
 	tabletopData.forEach(function(item,j){
 		if (typeof item["isLive"] === undefined || item["isLive"] === "") return;
 		colHtml = dataTemplate;
