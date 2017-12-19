@@ -8,6 +8,8 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
 	<!-- build:css -->
 	<link rel="stylesheet" href="css/globals.css">
+	<link rel="stylesheet" href="css/vendor/slick.css">
+	<link rel="stylesheet" href="css/vendor/slick-theme.css">
 	<link rel="stylesheet" href="css/header.css">
 	<link rel="stylesheet" href="css/favs.css">
 	<link rel="stylesheet" href="css/footer.css">
@@ -157,8 +159,8 @@
 		<div class="plant col-sm-4 col-xs-12" id="{id}-plant">
 			<a name="{id}"></a>
 			<div class="plant-inner">
-				<div id="{id}-Image_url" class="imgw" style="background-image: url('{Image_url}')" dataImageUrl="{Image_url}">
-					<span class="imgsrc">{Image_domain}</span>
+				<div class="slider">
+					{tpl-img}
 				</div>
 				<div class="header">
 					<div id="{id}-lngw_info" class="lngInfo"><span class="lngText" dataContent="QuickInfo">Quick translation</span>:</div>
@@ -195,6 +197,11 @@
 			</div>
 		</div>
 	</template>
+	<template id="tpl-img">
+		<div id="{id}-Image_url" class="imgw" style="background-image: url('{Image_url}')" dataImageUrl="{Image_url}">
+			<span class="imgsrc">{Image_domain}</span>
+		</div>
+	</template>
 	<template id="tpl-fav">
 		<a href="#{id}">
 			<div class="fav">
@@ -219,6 +226,7 @@
 	<script type="text/javascript" src="js/vendor/tabletop.js"></script>
 	<script type="text/javascript" src="js/vendor/cookies-js.min.js"></script>
 	<script type="text/javascript" src="js/vendor/artyom.min.js"></script>
+	<script type="text/javascript" src="js/vendor/slick.min.js"></script>
 	<script type="text/javascript" src="js/tabletop.js"></script>
 	<script type="text/javascript" src="js/cookie.js"></script>
 	<script type="text/javascript" src="js/favs.js"></script>

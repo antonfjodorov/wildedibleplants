@@ -44,11 +44,25 @@ function showInfo(tabletopData, tabletopInfo, next){
 		}
 		var id = item['Name_latin'].replace(/ /g, '_').replace(/\(/g, '').replace(/\)/g, '');
 		colHtml = colHtml.replace(new RegExp('{id}', "g"), id);
-		var imgDomain = item['Image_url'].replace('http://','').replace('https://','').split(/[/?#]/)[0];
-		if (imgDomain.split('.').length > 2){
-			imgDomain = imgDomain.substring(imgDomain.indexOf('.')+1);
+		
+		// Image_url field can contain single or multiple urls (in csv format)
+		var imgSplits = item['Image_url'].split(',');
+		var imgTemplates = "";
+		for (var k = 0; k < imgSplits.length; k++) {
+			// Replace {Image_url}
+			var imgTemplate = $('#tpl-img').html();
+			imgTemplate = imgTemplate.replace(/{Image_url}/g, imgSplits[k]);
+
+			// Replace {Image_domain}
+			var imgDomain = imgSplits[k].replace('http://','').replace('https://','').split(/[/?#]/)[0];
+			if (imgDomain.split('.').length > 2){
+				imgDomain = imgDomain.substring(imgDomain.indexOf('.')+1);
+			}
+			imgTemplate = imgTemplate.replace(new RegExp('{Image_domain}', "g"), imgDomain);
+
+			imgTemplates += imgTemplate;
 		}
-		colHtml = colHtml.replace(new RegExp('{Image_domain}', "g"), imgDomain);
+		colHtml = colHtml.replace(/{tpl-img}/g, imgTemplates);
 
 		rowHtml = rowHtml + colHtml;
 		if ((j+1)%3==0 || j+1==tabletopDataLength){

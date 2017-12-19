@@ -17,8 +17,20 @@ $(document).ready(function(){
 		initFavClickers();
 		populateFavsFirstTime();
 
+		/* language */
 		initLngClickers();
 		setLngFromCookie();
+
+		/**
+		 * init slick slider where there are at least 2 images
+		 */
+		$('.plant-inner .slider:not(:has(.imgw:only-child))').slick({
+			// arrows:        false,
+			autoplay:      true,
+			autoplaySpeed: 4000,
+			dots: true,
+			fade: true
+		});
 
 		/* Masonry.js */
 		renderResponsiveGrid();
