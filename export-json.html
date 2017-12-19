@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<title>Download plants in JSON format</title>
+	</head>
+	<body>
+		<script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+		<script type="text/javascript" src="js/vendor/tabletop.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function(){
+				Tabletop.init({
+					key: '18Y2UVB9ntr1B-SREm749F8V_U428Bt_8eIbliPZttMg',
+					callback: function(d, t){
+						console.log('data:', d);
+						console.log('t:', t);
+						$('#output').html(JSON.stringify(d));
+					},
+					simpleSheet: true
+				});
+			});
+		</script>
+		<div id="output">Harvesting plants in JSON...</div>
+	</body>
+</html>

@@ -14,6 +14,7 @@ var paths = {
 		img:  SRC+'img/*',
 		fonts:SRC+'fonts/*',
 		js:   SRC+'js/**/*.js',
+		data: SRC+'data/*',
 		index:SRC+'index.html'
 	},
 	dest:{
@@ -21,6 +22,7 @@ var paths = {
 		fonts:DEST+'fonts/',
 		img:  DEST+'img/',
 		js:   DEST+'js/',
+		data: DEST+'data/',
 		index:DEST+'/',
 		bundlecss:'css/',
 		bundlejs: 'js/',
@@ -51,6 +53,10 @@ gulp.task('fonts', function(){
 	return gulp.src(paths.src.fonts)
 	.pipe(gulp.dest(paths.dest.fonts));
 });
+gulp.task('data', function(){
+	return gulp.src(paths.src.data)
+	.pipe(gulp.dest(paths.dest.data));
+});
 gulp.task('index', function(){
 	return gulp.src(paths.src.index)
 	.pipe(htmlReplace({
@@ -64,6 +70,7 @@ gulp.task('default', [
 		'img',
 		'js',
 		'fonts',
+		'data',
 		'index'
 	], function(){}
 );

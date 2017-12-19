@@ -1,10 +1,22 @@
 function initTabletop(next){
-	//https://docs.google.com/spreadsheets/d/18Y2UVB9ntr1B-SREm749F8V_U428Bt_8eIbliPZttMg/pubhtml?gid=1906710433&single=true
-	Tabletop.init({
-		key: '18Y2UVB9ntr1B-SREm749F8V_U428Bt_8eIbliPZttMg',
-		callback: function(d, t){ showInfo(d, t, next) },
-		simpleSheet: true
-	});
+	/**
+	 * Switch between local data and live data from Google Sheets
+	 * You can export live data to local file by using export-json.html
+	 */
+	useLocalData = false;
+
+	if (useLocalData){
+		$.get('/data/export18dec2017.json', function(data){
+			showInfo(data, null, next);
+		});
+	} else {
+		//https://docs.google.com/spreadsheets/d/18Y2UVB9ntr1B-SREm749F8V_U428Bt_8eIbliPZttMg/pubhtml?gid=1906710433&single=true
+		Tabletop.init({
+			key: '18Y2UVB9ntr1B-SREm749F8V_U428Bt_8eIbliPZttMg',
+			callback: function(d, t){ showInfo(d, t, next) },
+			simpleSheet: true
+		});
+	}
 }
 /**
  * Data has been fetched from database, now display it.
