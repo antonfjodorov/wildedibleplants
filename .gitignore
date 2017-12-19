@@ -1,2 +1,5 @@
+meetings/
 public/
 gulp/node_modules
+node_modules
+package-lock.json
