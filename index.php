@@ -1,3 +1,38 @@
+<?php
+/**
+ * Executes semi-automatic cron job to sync Google Sheet
+ *  -> "semi-automatic" because it is executed only when this file is run
+ *  -> "cron" because it checks whether a certain amount has passed before running job
+ * If predefined amount of time has passed, then:
+ * 1. Downloads Google Sheet (plants database) as JSON, timestamps it and appends to backup folder
+ * 2. Creates (if not exists) and points symlink to latest export file. This file will be used as
+ *    cached file in order to not call Google Sheet all the time. This is to avoid rate limitation
+ *    and have a backup in case Google Sheet messes up.
+ * 3. Keeps backup folder under certain size limit by removing files starting from the oldest.
+ * 4. Sets current date as last time cron job was run
+ */
+$settings = array(
+	'cron_trigger_after_seconds' => 86400, /* 24h */
+	'lastrun_filename' => 'lastrun'
+);
+
+function runCronJob(){
+	
+};
+function main(){
+	if (file_exists($settings['lastrun_filename'])){
+		$lastRun = file_get_contents($settings['lastrun_filename']);
+		$now = strtotime(strftime("%F %T"));
+		if ($now - $lastRun > $settings['cron_trigger_after_seconds']){
+			runCronJob();
+		}
+	} else {
+		runCronJob();
+	}
+};
+// main();
+?>
+
 <html lang="en">
 <head>
 	<meta charset="UTF-8">
@@ -5,7 +40,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Wild, edible and medicinal plants | REALSproject</title>
 	<link href='http://fonts.googleapis.com/css?family=Crete+Round|Marmelad' rel='stylesheet' type='text/css'>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 	<!-- build:css -->
 	<link rel="stylesheet" href="css/globals.css">
 	<link rel="stylesheet" href="css/vendor/slick.css">
@@ -111,7 +146,11 @@
 	</div>
 	<section id="pic">
 		<div class="hw">
-			<h2 class="lngText" dataContent="headerMedi">Medicinal and edible plants in the Nordic region</h2>
+			<div class="container">
+				<div class="row">
+					<h2 class="lngText" dataContent="headerMedi">Medicinal and edible plants in the Nordic region</h2>
+				</div>
+			</div>
 		</div>
 	</section>
 	<section id="intro">
@@ -128,13 +167,16 @@
 			</div>
 		</div>
 	</section>
-	<section class="plants collapseAfterTouch" class="container-fluid">
+	<section id="plants-header">
 		<div class="container">
 			<div class="row">
-				<div class="col-md-12">
-					<em><p class="lngText" dataContent="ABPtext">Annual (A), biennial (B) and perennial (P) plants.</p></em>
+				<div class="col-md-12 hidden" id="form-plants-header">
 				</div>
 			</div>
+		</div>
+	</section>
+	<section class="plants collapseAfterTouch" class="container-fluid">
+		<div class="container">
 			<div id="plantsContent">
 				<p class="loading text-center">Please wait, your plants are being harvested ...</p>
 			</div>
@@ -156,7 +198,7 @@
 	</footer>
 	<script type="text/javascript"></script>
 	<template id="tpl-plant">
-		<div class="plant col-sm-4 col-xs-12" id="{id}-plant">
+		<div class="plant col-sm-4 col-xs-12 cat-{cat}" id="{id}-plant">
 			<a name="{id}"></a>
 			<div class="plant-inner">
 				<div class="slider">
@@ -215,6 +257,27 @@
 				<p id="{id}-Edible_use_RU_cut" class="lng ru">{Edible_use_RU_cut}</p>
 			</div>
 		</a>
+	</template>
+	<template id="tpl-plants-header-form">
+		<h2 class="heading lngText" dataContent="Categories">Categories</h2>
+		<form>
+			<div class="row">
+				{content}
+			</div>
+		</form>
+		<h2 class="heading lngText" dataContent="Lifespan">Lifespan</h2>
+		<div class="row">
+			<div class="col-sm-4 lngText" dataContent="(A)nnual">(A)nnual</div>
+			<div class="col-sm-4 lngText" dataContent="(B)iennial">(B)iennial</div>
+			<div class="col-sm-4 lngText" dataContent="(P)erennial">(P)erennial</div>
+		</div>
+	</template>
+	<template id="tpl-plants-header-form-item">
+		<div class="col col-sm-4">
+			<input id="{id}" type="checkbox" data-cat="{cat}" checked>
+			<label for="{id}">{content}</label>
+			<span class="badge">{count}</span>
+		</div>
 	</template>
 
 	<!-- Scripts -->

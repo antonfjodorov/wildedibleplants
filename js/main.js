@@ -27,7 +27,7 @@ $(document).ready(function(){
 		$('.plant-inner .slider:not(:has(.imgw:only-child))').slick({
 			// arrows:        false,
 			autoplay:      true,
-			autoplaySpeed: 4000,
+			autoplaySpeed: 20000,
 			dots: true,
 			fade: true
 		});

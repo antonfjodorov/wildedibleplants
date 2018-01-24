@@ -21,6 +21,35 @@ section#intro{
 	background-color: #50432B;
 	color: white;
 }
+section#plants-header{
+	background-color: rgba(80, 67, 43, 0.8);
+	color: white;
+}
+section#plants-header .heading{
+	font-size: 16px;
+	margin: 0;
+	padding-bottom: 7px;
+}
+section#plants-header form .col{
+	padding-right: 50px;
+}
+section#plants-header form .col input[type=checkbox]{
+	position: absolute;
+}
+section#plants-header form .col label{
+	padding-left: 20px;
+}
+section#plants-header form .col label:first-letter{
+	text-transform: uppercase;
+}
+section#plants-header form .col .badge{
+	position: absolute;
+	right: 15px;
+	top: 0;
+	line-height: inherit;
+	background-color: rgba(0,0,0,.4);
+	border-radius: 0;
+}
 section#about-reals{
 	background-color: antiquewhite;
 }

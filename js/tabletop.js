@@ -35,6 +35,7 @@ function sortTabletopData(tabletopData, lngCode){
  * 3. Put col into row, repeat until row is filled
  * 4. Append row, repeat until all items parsed
  */
+var categories = {};
 function showInfo(tabletopData, tabletopInfo, next){
 	$('.loading').hide();
 
@@ -55,6 +56,11 @@ function showInfo(tabletopData, tabletopInfo, next){
 		}
 		var id = item['Name_latin'].replace(/ /g, '_').replace(/\(/g, '').replace(/\)/g, '');
 		colHtml = colHtml.replace(new RegExp('{id}', "g"), id);
+		// Add plant category
+		var cat = item['Plant category'];
+		var hyphenatedCat = cat.replace(/ /g, '-');
+		categories[hyphenatedCat] = cat;
+		colHtml = colHtml.replace(/{cat}/g, hyphenatedCat);
 		
 		// Image_url field can contain single or multiple urls (in csv format)
 		var imgSplits = item['Image_url'].split(',');
@@ -83,5 +89,45 @@ function showInfo(tabletopData, tabletopInfo, next){
 		}
 	});
 
+	showCategoryFilter();
+	initCategoryFilter();
 	next();
+}
+function showCategoryFilter(){
+	var catKeys = Object.keys(categories);
+	var catArr = Object.values(categories);
+	var itemTpl = $('#tpl-plants-header-form-item').html();
+	var checkboxes = '';
+	for (var i = 0; i < catArr.length; i++) {
+		var id = 'cb-'+catKeys[i];
+		var count = $('.cat-'+catKeys[i]).length || 0;
+		var htmlCheckbox = itemTpl;
+		htmlCheckbox = htmlCheckbox.replace(/{content}/, catArr[i]);
+		htmlCheckbox = htmlCheckbox.replace(/{id}/g, id);
+		htmlCheckbox = htmlCheckbox.replace(/{cat}/g, catKeys[i]);
+		htmlCheckbox = htmlCheckbox.replace(/{count}/g, count);
+		checkboxes += htmlCheckbox;
+	}
+
+	var formTpl = $('#tpl-plants-header-form').html();
+	formTpl = formTpl.replace(/{content}/, checkboxes);
+	
+	$('#form-plants-header').html(formTpl);
+	$('#form-plants-header').removeClass('hidden');
+}
+function initCategoryFilter(){
+	$('#form-plants-header input[type=checkbox]').on('change', function() {
+		var value = $(this).prop('checked');
+		var cat   = $(this).attr('data-cat');
+
+		if (value){
+			$('.cat-'+cat).show();
+		} else {
+			$('.cat-'+cat).hide();
+		}
+		renderResponsiveGrid();
+		// $("#myTable tr").filter(function() {
+		// 	$(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+		// });
+	});
 }

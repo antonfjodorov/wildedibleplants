@@ -15,7 +15,7 @@ var paths = {
 		fonts:SRC+'fonts/*',
 		js:   SRC+'js/**/*.js',
 		data: SRC+'data/*',
-		index:SRC+'index.html'
+		index:SRC+'index.php'
 	},
 	dest:{
 		css:  DEST+'css/',
